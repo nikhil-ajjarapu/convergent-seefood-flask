@@ -7,7 +7,7 @@
 
     `cd convergent-flask`
 
-3. Run these commands to set up a virtual environment with pip (full documentation here):
+3. Run these commands to set up a virtual environment with pip (full documentation + troubleshooting [here](https://flask.palletsprojects.com/en/2.0.x/installation/)):
 
     `python3 -m venv venv`
 
