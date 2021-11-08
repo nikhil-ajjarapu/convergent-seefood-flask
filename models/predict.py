@@ -15,6 +15,7 @@ def predict_image(request_img):
     # instantiate model with previously trained model (provided by Sanya in previous lectures)
     net = Classifier()
     net.load_state_dict(torch.load("models/model.th", map_location=torch.device('cpu') ))
+    net.eval()
 
     # adding dimension to simualate batch size 1
     # shape goes from (3, 96, 96) -> (1, 3, 96, 96)   
@@ -26,6 +27,6 @@ def predict_image(request_img):
     prob = scores.softmax(dim=1)[0]
 
     # create user friendly output to pass back to Flask hook
-    hotdog = "a hot dog" if pred == 0 else "not a hot dog"
+    is_hotdog = pred.item() == 0
     prob = prob[pred].item()
-    return hotdog, round(prob * 1000) / 10
+    return is_hotdog, round(prob * 1000) / 10
