@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from PIL import Image
 from models.predict import predict_image
 
@@ -19,4 +19,7 @@ def process_picture():
     
     hotdog_status, prob = predict_image(img)
 
-    return f"<p> Result: {prob}% sure this is {hotdog_status} </p>"
+    return jsonify({
+        "is_hotdog": hotdog_status,
+        "probability": prob
+    })
