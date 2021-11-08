@@ -3,6 +3,10 @@
 ## Set up
 
 1. Clone the repo.
+
+    `git clone https://github.com/nikhil-ajjarapu/convergent-seefood-flask.git` 
+
+
 2. Navigate to the repository directory within the terminal.
 
     `cd convergent-flask`
@@ -11,7 +15,7 @@
 
     `python3 -m venv venv`
 
-    `. venv/bin/activate`
+    `. venv/bin/activate` (just need to run this after creating the venv once)
 
     `pip install -r requirements.txt`
 
